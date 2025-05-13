@@ -9,7 +9,15 @@ export const Pokemon = () => {
         try {
             const res = await fetch(API);
             const data = await res.json();
-            console.log(data);
+            // console.log(data);
+            
+            const detailedPokemonData = data.results.map(async (curPokemon) => {
+                const res = await fetch(curPokemon.url);
+                const data = await res.json();
+                return data;
+            });
+
+            console.log(detailedPokemonData); 
             
         } catch (error) {
             console.log(error);
@@ -17,6 +25,6 @@ export const Pokemon = () => {
     }
 
     useEffect(() => {
-        FetchPokemon()
+        FetchPokemon();
     }, []);
 }
