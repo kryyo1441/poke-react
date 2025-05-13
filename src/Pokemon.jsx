@@ -60,7 +60,7 @@ export const Pokemon = () => {
     <>
     <section className="container">
         <header>
-            <h1>Lets Catch 'em all!!</h1>
+            <h1>Gotta Catch 'em all!!</h1>
         </header>
 
         <div className="pokemon-search">
