@@ -16,10 +16,10 @@ A React-based Pokemon search application that allows users to explore Pokemon an
 ## Screenshots
 
 ### Main Interface
-![Main Interface](./screenshots/front.jpg)
+<img src="./screenshots/front.jpg" alt="Main Interface" />
 
 ### Search Functionality
-![Search Feature](./screenshots/search.jpg)
+<img src="./screenshots/search.jpg" alt="Search Functionality" />
 
 ## Tech Stack
 
