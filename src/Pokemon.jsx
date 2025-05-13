@@ -17,7 +17,8 @@ export const Pokemon = () => {
                 return data;
             });
 
-            console.log(detailedPokemonData); 
+            const detailedPokemon = await Promise.all(detailedPokemonData);
+            console.log(detailedPokemon);
             
         } catch (error) {
             console.log(error);
