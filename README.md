@@ -1,12 +1,47 @@
-# React + Vite
+# Pokemon Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based Pokemon search application that allows users to explore Pokemon and their details in real-time.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Display Pokemon cards with detailed information
+- Real-time search functionality
+- Responsive card layout
+- Pokemon details including:
+  - Type
+  - Height and Weight
+  - Base stats
+  - Abilities
 
-## Expanding the ESLint configuration
+## Screenshots
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Main Interface
+![Main Interface](./screenshots/front.jpg)
+
+### Search Functionality
+![Search Feature](./screenshots/search.jpg)
+
+## Tech Stack
+
+- React
+- Vite
+- PokeAPI
+- CSS3
+
+## Getting Started
+
+```bash
+# Clone the repository
+git clone [your-repo-url]
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+```
+
+## Credits
+
+- Pokemon data provided by [PokeAPI](https://pokeapi.co/)
+- Built with React and Vite
