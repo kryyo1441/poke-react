@@ -1,10 +1,14 @@
-import { use, useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./index.css"
-
+import { PokemonCards } from "./PokemonCards";
 
 export const Pokemon = () => {
     const API = "https://pokeapi.co/api/v2/pokemon?limit=24";
-    
+
+    const [pokemon, setpokemon] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
     const FetchPokemon  = async () => {
         try {
             const res = await fetch(API);
@@ -17,15 +21,59 @@ export const Pokemon = () => {
                 return data;
             });
 
-            const detailedPokemon = await Promise.all(detailedPokemonData);
-            console.log(detailedPokemon);
+            const detailedResponses = await Promise.all(detailedPokemonData);
+            console.log(detailedResponses);
+            setpokemon(detailedResponses)
+            setLoading(false);
+            
             
         } catch (error) {
             console.log(error);
+            setLoading(false);
+            setError(error);
         }
     }
 
     useEffect(() => {
         FetchPokemon();
     }, []);
+
+    if (loading){
+        return(
+            <div>
+                <h1>Loading.......</h1>
+            </div>
+        )
+    }
+
+    if(error){
+        return(
+            <div>
+                <h3>{error.message}</h3>
+            </div>
+        )
+    }
+    return (
+    <>
+    <section className="container">
+        <header>
+            <h1>Lets Catch 'em all!!</h1>
+        </header>
+        <div>
+            <ul className="cards">
+                {pokemon.map((curPokemon) => {
+                    return <PokemonCards key = {curPokemon.id} pokedata={curPokemon}/>
+                })}
+            </ul>
+        </div>
+    </section>
+    </>
+);
+
+
 }
+
+
+
+
+
